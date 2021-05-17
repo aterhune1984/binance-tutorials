@@ -32,7 +32,7 @@ var candleSeries = chart.addCandlestickSeries({
 	borderDownColor: 'rgba(255, 144, 0, 1)',
 	borderUpColor: 'rgba(255, 144, 0, 1)',
 	wickDownColor: 'rgba(255, 144, 0, 1)',
-	wickUpColor: 'rgba(255, 144, 0, 1)',
+	wickUpColor: 'rgb(9,255,68)',
 });
 
 fetch('http://localhost:5000/history')
@@ -54,7 +54,7 @@ binanceSocket.onmessage = function (event) {
 	console.log(candlestick)
 
 	candleSeries.update({
-		time: candlestick.t / 1000,
+		time: candlestick.t / 500,
 		open: candlestick.o,
 		high: candlestick.h,
 		low: candlestick.l,

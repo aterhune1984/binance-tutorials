@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from flask import Flask, render_template, request, flash, redirect, jsonify
 import config, csv, datetime
 from binance.client import Client
@@ -64,3 +65,7 @@ def history():
         processed_candlesticks.append(candlestick)
 
     return jsonify(processed_candlesticks)
+
+
+if __name__ == '__main__':
+    app.run()
